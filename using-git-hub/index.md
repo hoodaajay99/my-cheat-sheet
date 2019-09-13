@@ -36,6 +36,14 @@ git remote set-url origin git+ssh://git@github.com/hoodaajay99/my-cheat-sheet.gi
 
 ```
 
+Verify 
+
+```
+$ git remote -v
+origin  git+ssh://git@github.com/hoodaajay99/my-cheat-sheet.git (fetch)
+origin  git+ssh://git@github.com/hoodaajay99/my-cheat-sheet.git (push)
+```
+
 ## Checkin your changes in your local git repo
 ```
 $ git stage <files>
