@@ -36,7 +36,13 @@ git remote set-url origin git+ssh://git@github.com/hoodaajay99/my-cheat-sheet.gi
 
 ```
 
-## Checkin and Push your changes
+## Checkin your changes in your local git repo
+```
+$ git stage <files>
+$ git commit -m "commit message"
+```
+
+## Push your changes to remote git / github
 
 ```
 $ git push
