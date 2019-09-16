@@ -1,3 +1,19 @@
+# Download specific tree from a reposotory on Github
+```
+curl https://codeload.github.com/<username>/repo-name/tar.gz/master 
+| tar -xz --strip=<nested-level-of-target-source> <path-to-target-source>
+```
+- `--strip` = Nested Level number of target source directories
+
+#### Example:
+
+```
+curl https://codeload.github.com/hoodaajay99/c_programming_course/tar.gz/master | tar -xz --strip=1 c_programming_course-master
+
+curl https://codeload.github.com/hoodaajay99/c_programming_course/tar.gz/master | tar -xz --strip=2 c_programming_course-master/00-welcome
+```
+
+
 # Automate git push (Not specify username and password)
 
 ## Generate an SSH key
