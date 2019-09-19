@@ -12,9 +12,54 @@ curl https://codeload.github.com/hoodaajay99/c_programming_course/tar.gz/master 
 
 curl https://codeload.github.com/hoodaajay99/c_programming_course/tar.gz/master | tar -xz --strip=2 c_programming_course-master/00-welcome
 ```
+# Automate git push (Not specify username and password) - Over HTTPS
+
+## Use Storage as `credential.helper`
+
+```
+$ git config credential.helper store
+$ git push http://example.com/repo.git
+Username: <type your username>
+Password: <type your password>
+
+[several days later]
+$ git push http://example.com/repo.git
+[your credentials are used automatically]
+```
+> credentials stored here `$ cat ~/.git-credentials`
+
+Reference - `https://git-scm.com/docs/git-credential-store`
 
 
-# Automate git push (Not specify username and password)
+## Use Cache as `credential.helper`
+
+```
+$ git config credential.helper cache
+$ git push http://example.com/repo.git
+Username: <type your username>
+Password: <type your password>
+
+[work for 5 more minutes]
+$ git push http://example.com/repo.git
+[your credentials are used automatically]
+```
+
+Flush Cache:
+```
+$ git credential-cache exit
+```
+Auto Flush After 300 secs
+
+```
+$ git config credential.helper 'cache --timeout=300'
+```
+
+> credentials stored in Memory
+
+Reference - `https://git-scm.com/docs/git-credential-cache`
+
+
+# Automate git push (Not specify username and password) - Over SSH
 
 ## Generate an SSH key
 
